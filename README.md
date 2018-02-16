@@ -1,2 +1,0 @@
-"# ajaxInGitHub" 
-# ajaxInGitHub
