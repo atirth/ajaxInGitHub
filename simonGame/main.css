@@ -1,0 +1,32 @@
+
+.block {
+  width: 100px;
+  height: 100px;
+  float: left;
+  font-size: 22px;
+  color: black;
+}
+#blue {
+  background-color: blue;
+}
+#green {
+  background-color: #008000;
+}
+#red {
+  background-color: red;
+}
+.reduceOpacity {
+	opacity: 0.5;
+}
+.simon-game{
+	margin: 0 auto;
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#yellow {
+  background-color: yellow;
+}
