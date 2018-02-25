@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+</head>
+<body>
+
+  <nav class='navbar navbar-default'>
+    <div class='container'>
+      <div class="navbar-header">
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <h1>check console</h1>
+  </div>
+  
+</body>
+<script>
+var str = "1125-abs56-123";
+str = str.split("-");
+var count =1,newstr="";
+var arr=[];
+for (var i=0;i<str.length;i++){
+	var a = str[i].match(/[0-9]{3}/);
+	arr.push(a);
+}
+for(j=0 ; j< arr.length ;j++){
+	if(arr[j] && count!=3){
+		newstr = newstr + arr[j][0] +"-";
+		count++;
+	}
+}
+console.log(newstr);
+</script>
+</html>

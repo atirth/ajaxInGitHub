@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+</head>
+<body>
+
+  <nav class='navbar navbar-default'>
+    <div class='container'>
+      <div class="navbar-header">
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <h1>Enter Json path and send Json also and find Json path is exist or not </h1>
+  </div>
+  
+</body>
+<script>
+var JSON = {
+  "a": {
+    "b": 2,
+    "c": {
+      "p": {
+        "q": 5
+      },
+      "r": 4
+    }
+  },
+  "d": 5,
+  "e": {
+      "f": 9
+    },
+  "g": {
+      "h": 10
+    }
+};
+var path = "a.c.p.q";
+function JSONvalidator(JSON,path){
+	var pathArray = path.split("."),
+	obj={
+		flag:false,
+		Json:JSON
+	};
+	for(var i=0;i<pathArray.length;i++){
+		obj = validate(obj.Json,pathArray[i]);
+		if(!obj.flag){
+			return false;
+		}
+	}
+	return true;
+}
+function validate(Json,element){
+	for (var key in Json){
+		if(element==key){
+			return {flag:true,Json:Json[key]}
+		}
+	}
+	return {flag:false,Json:null}
+	
+}
+var answer = JSONvalidator(JSON,path);
+alert(answer);
+/*
+find all element in object 
+if(typeof Json[key] == "object" && Json[key] !== null){
+				JSONvalidator(Json[key],path);
+				console.log(key);
+			}else{
+				console.log(key);
+}*/
+</script>
+</html>

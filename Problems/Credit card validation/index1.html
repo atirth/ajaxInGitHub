@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  <title></title>
+  <style>
+	.container{
+	width: 400px;
+	}
+	.container h1{
+	text-align:center;
+	}
+	.container p{
+	font-weight:bold;
+	}
+	.container span{
+	font-weight:bold;
+	}
+	.container .cardno input{
+		width:235px;
+	}
+	.container input{
+		width:100%;
+	}
+	.container label not(.expiry label){
+		display : block;
+	}
+	.container .checkbox{
+		display: inline-block;
+		width: 130px;
+		margin:0px 0 0 0px;
+		line-height : 20px;
+		border:1px solid black;
+	}
+  </style>
+</head>
+<body>
+	<div class="container">
+		<h1>Order Now</h1>
+		<form>
+			<div class="cardno">
+				<label>Credit card number:</label>
+				<input type="text" value=""/>
+				<span class="checkbox"></span>
+			</div>
+			<div class="name">
+				<label>Name on card:</label>
+				<input type="text"></input>
+			</div>
+			<div class="expiry">
+				<label>Expiry date:</label>
+				<input type="text"></input>
+			</div>
+			<div class="cvv">
+				<label>CVV:</label>
+				<input type="text"></input>
+			</div>
+		<input type="submit"></input>
+		</form>
+	</div>
+</body>
+<script src="./main.js"> </script>
+</html>
