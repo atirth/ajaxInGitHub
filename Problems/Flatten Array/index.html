@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+</head>
+<body>
+
+  <nav class='navbar navbar-default'>
+    <div class='container'>
+      <div class="navbar-header">
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <h1>Flatten Array and find output</h1>
+  </div>
+  
+</body>
+<script>
+var nestedarray = [1,2,3,[4,[5,6,7],8],9,[10,[11,12,[13,14]]]];
+
+function flattenArray(nestedarray){
+	nestedarray.forEach(function(key){
+		if(key.constructor.name == "Array"){
+			flattenArray(key);
+		}else{
+			console.log(key);
+		}
+	});
+}
+
+var answer = flattenArray(nestedarray);
+//alert(answer);
+</script>
+</html>
