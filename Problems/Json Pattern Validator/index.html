@@ -8,20 +8,14 @@
 </head>
 <body>
 
-  <nav class='navbar navbar-default'>
-    <div class='container'>
-      <div class="navbar-header">
-      </div>
-    </div>
-  </nav>
-
-
   <div class="container">
     <h1>Enter Json path and send Json also and find Json path is exist or not </h1>
+	<h2 class=""></h2>
   </div>
   
 </body>
 <script>
+/*
 var JSON = {
   "a": {
     "b": 2,
@@ -73,6 +67,56 @@ if(typeof Json[key] == "object" && Json[key] !== null){
 				console.log(key);
 			}else{
 				console.log(key);
-}*/
+}
+var inputObj = {
+        'name': 'jane',
+        'last_name': 'doe',
+        'profession': 'engineer',
+        'characteristics': {
+                'intelligent': true,
+                'punctual': false,
+                'experience': {
+                        '2012': 'college passout',
+                        '2014': 'mba passout',
+                        '2016': 'employed'
+                }
+        }
+};
+function abc(inputObj,key){
+	if(typeof inputObj[key] == "object" && inputObj[key] !== null){
+		return  key+"."+abc(inputObj[key]);
+		
+	}else{
+	return key;
+	}
+}
+function flatten(inputObj){
+	var newobject = {};
+	for (var key in inputObj){
+		if(typeof inputObj[key] == "object" && inputObj[key] !== null){	
+					var nestedObject = flatten(inputObj[key]);
+					for (var nestedkey in nestedObject) {			
+							newobject[key + '.' + nestedkey] = nestedObject[nestedkey];
+						}
+					
+		}else{
+					newobject[key] = inputObj[key];
+		}
+	}
+	return newobject;
+}
+console.log(flatten(inputObj));*/
+function Sum(a, b) {
+ console.log('Sum is: ', a + b);
+}
+Sum.prototype.callAfter = function(timer,param1,param2) {
+    setTimeout(func, timer);
+	function func(){
+		return Sum(param1,param2);	
+	}
+};
+var sum = new Sum();
+console.log(sum.callAfter(5000, 8, 9));
+
 </script>
 </html>
