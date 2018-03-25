@@ -1,0 +1,135 @@
+<div id="play" class="padding"><p><b>Total duration</b>: 122:48</p><div class="section_title"><h3 style="text-shadow: rgb(62, 40, 40) 0px 0px 2px;">Question 1</h3></div><div class="questiontext"><pre>Write an implementation of a function called `getScript` that fetches and executes a JavaScript file in the browser. The URL of the file to fetch is passed to it.
+
+Base structure:
+
+function getScript (url) {
+ // should fetch the JavaScript file at the given URL and execute it.
+}
+
+Example call: 
+
+getScript('http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js');
+
+Note: You are not supposed to use any external library.</pre></div><div id="answer_8psfvPp" class="answer"><p class="skip">Candidate skipped question</p></div><div class="section_title"><h3 style="text-shadow: rgb(62, 40, 40) 0px 0px 2px;">Question 2</h3></div><div class="questiontext"><pre>Write an implementation of a function `value` which returns the value of the inner most function. 
+
+For example: 
+var scalar = 'foo';
+var fn = function() { return 'bar'; };
+var fn2 = function() {
+  return fn;
+};
+var fn3 = function() {
+  return fn2;
+};
+var innerPeace = function() {
+  return function() {
+    return function() {
+      return function() {
+        return function() {
+          return function() {
+            return function() {
+              return function() {
+                return function() {
+                  return '42';
+                };
+              };
+            };
+          };
+        };
+      };
+    };
+  };
+};
+
+value(scalar);   // should be      'foo'
+value(fn);          // should be      'bar'
+value(fn2);        // should also be 'bar'
+value(fn3);       // should also be 'bar'
+value(innerPeace);     // should be '42'</pre></div><div id="answer_8pstfjb" class="answer"><div class="player" style="height: 237px;"><pre class="prettyprint"><span class="kwd">function</span><span class="pln"> value</span><span class="pun">(</span><span class="pln">reference</span><span class="pun">){</span><span class="pln"><br>&nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="kwd">typeof</span><span class="pln"> reference </span><span class="pun">==</span><span class="pln"> </span><span class="str">"function"</span><span class="pun">){</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> value</span><span class="pun">(</span><span class="pln">reference</span><span class="pun">());</span><span class="pln"><br>&nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; </span><span class="kwd">else</span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> reference</span><span class="pun">;</span><span class="pln"><br>&nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br></span><span class="com">//value(scalar); &nbsp; &nbsp;should be &nbsp; &nbsp; &nbsp;'foo'</span><span class="pln"><br></span><span class="com">//value(fn); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// should be &nbsp; &nbsp; &nbsp;'bar'</span><span class="pln"><br></span><span class="com">//value(fn2); &nbsp; &nbsp; &nbsp; &nbsp;// should also be 'bar'</span><span class="pln"><br></span><span class="com">//value(fn3); &nbsp; &nbsp; &nbsp; // should also be 'bar'</span><span class="pln"><br></span><span class="com">//value(innerPeace); &nbsp; &nbsp; // should be '42'</span></pre></div><div class="toolbar ui-widget-header ui-corner-all"><div class="player_timer"><span class="current_time">0:00</span> / 19:58
+                        </div><div class="fd-slider " id="fd-slider-slider_8pstfjb" aria-disabled="false"><span class="fd-slider-inner"></span><span class="fd-slider-bar"></span><button type="button" class="fd-slider-handle" role="slider" aria-valuemin="0" aria-valuemax="1198300" aria-valuenow="0.00" aria-valuetext="0.00" style="left: 0px;">&nbsp;</button></div><input type="text" id="slider_8pstfjb" class="fd_slider fd_jump fd_range_0_1198300 fd_inc_100 fd_tween fd_slider_cb_move_zenSliderMoveHandler fd_slider_cb_update_zenSliderUpdateHandler" style="display: none" value="0"><button class="play ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" aria-disabled="false" title="play"><span class="ui-button-icon-primary ui-icon ui-icon-play"></span><span class="ui-button-text">play</span></button><span class="player_speed ui-buttonset"><label for="speed_1x_8pstfjb" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button" aria-disabled="false"><span class="ui-button-text">1x</span></label><input type="radio" id="speed_1x_8pstfjb" value="1" name="speed_8pstfjb" class="ui-helper-hidden-accessible"><label for="speed_2x_8pstfjb" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">2x</span></label><input type="radio" id="speed_2x_8pstfjb" value="2" name="speed_8pstfjb" class="ui-helper-hidden-accessible"><label for="speed_5x_8pstfjb" class="ui-state-active ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" aria-pressed="true" role="button" aria-disabled="false"><span class="ui-button-text">5x</span></label><input type="radio" id="speed_5x_8pstfjb" value="5" name="speed_8pstfjb" checked="checked" class="ui-helper-hidden-accessible"></span></div></div><div class="section_title"><h3 style="text-shadow: rgb(62, 40, 40) 0px 0px 2px;">Question 3</h3></div><div class="questiontext"><pre>Write an implementation of a function called `flatten` that flattens a nested object. The method takes an object and returns a new flattened object.
+
+Base structure:
+
+function flatten(obj) {
+ // should return a new flattened object.
+}
+
+For example:
+For the given input object,
+var inputObj = {
+        'name': 'jane',
+        'last_name': 'doe',
+        'profession': 'engineer',
+        'characteristics': {
+                'intelligent': true,
+                'punctual': false,
+                'experience': {
+                        '2012': 'college passout',
+                        '2014': 'mba passout',
+                        '2016': 'employed'
+                }
+        }
+};
+
+flatten(inputObj);
+
+Output: 
+{
+        'name': 'jane',
+        'last_name': 'doe',
+        'profession': 'engineer',
+        'characteristics.intelligent': true,
+        'characteristics.punctual': false,
+        'characteristics.experience.2012': 'college passout',
+        'characteristics.experience.2014': 'mba passout',
+        'characteristics.experience.2016': 'employed'
+}
+
+Note: The method should NOT modify the original object. It should return a new object.</pre></div><div id="answer_8psWx2q" class="answer"><div class="player" style="height: 278px;"><pre class="prettyprint"><span class="kwd">function</span><span class="pln"> flatten</span><span class="pun">(</span><span class="pln">inputObj</span><span class="pun">){</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">var</span><span class="pln"> newobject </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{};</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> key </span><span class="kwd">in</span><span class="pln"> inputObj</span><span class="pun">){</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="kwd">typeof</span><span class="pln"> inputObj</span><span class="pun">[</span><span class="pln">key</span><span class="pun">]</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="str">"object"</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> inputObj</span><span class="pun">[</span><span class="pln">key</span><span class="pun">]</span><span class="pln"> </span><span class="pun">!==</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">){</span><span class="pln"> <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">var</span><span class="pln"> nestedObject </span><span class="pun">=</span><span class="pln"> flatten</span><span class="pun">(</span><span class="pln">inputObj</span><span class="pun">[</span><span class="pln">key</span><span class="pun">]);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> nestedkey </span><span class="kwd">in</span><span class="pln"> nestedObject</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; newobject</span><span class="pun">[</span><span class="pln">key </span><span class="pun">+</span><span class="pln"> </span><span class="str">'.'</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> nestedkey</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> nestedObject</span><span class="pun">[</span><span class="pln">nestedkey</span><span class="pun">];</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="kwd">else</span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; newobject</span><span class="pun">[</span><span class="pln">key</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> inputObj</span><span class="pun">[</span><span class="pln">key</span><span class="pun">];</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> newobject</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br>flatten</span><span class="pun">(</span><span class="pln">inputObj</span><span class="pun">);</span></pre></div><div class="toolbar ui-widget-header ui-corner-all"><div class="player_timer"><span class="current_time">0:00</span> / 35:12
+                        </div><div class="fd-slider " id="fd-slider-slider_8psWx2q" aria-disabled="false"><span class="fd-slider-inner"></span><span class="fd-slider-bar"></span><button type="button" class="fd-slider-handle" role="slider" aria-valuemin="0" aria-valuemax="2112200" aria-valuenow="0.00" aria-valuetext="0.00" style="left: 0px;">&nbsp;</button></div><input type="text" id="slider_8psWx2q" class="fd_slider fd_jump fd_range_0_2112200 fd_inc_100 fd_tween fd_slider_cb_move_zenSliderMoveHandler fd_slider_cb_update_zenSliderUpdateHandler" style="display: none" value="0"><button class="play ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" aria-disabled="false" title="play"><span class="ui-button-icon-primary ui-icon ui-icon-play"></span><span class="ui-button-text">play</span></button><span class="player_speed ui-buttonset"><label for="speed_1x_8psWx2q" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button" aria-disabled="false"><span class="ui-button-text">1x</span></label><input type="radio" id="speed_1x_8psWx2q" value="1" name="speed_8psWx2q" class="ui-helper-hidden-accessible"><label for="speed_2x_8psWx2q" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">2x</span></label><input type="radio" id="speed_2x_8psWx2q" value="2" name="speed_8psWx2q" class="ui-helper-hidden-accessible"><label for="speed_5x_8psWx2q" class="ui-state-active ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" aria-pressed="true" role="button" aria-disabled="false"><span class="ui-button-text">5x</span></label><input type="radio" id="speed_5x_8psWx2q" value="5" name="speed_8psWx2q" checked="checked" class="ui-helper-hidden-accessible"></span></div></div><div class="section_title"><h3 style="text-shadow: rgb(62, 40, 40) 0px 0px 2px;">Question 4</h3></div><div class="questiontext"><pre>Write an implementation of a function `callAfter` that enables ANY function to be called after some specified duration. The output of the function should remain the same. The function should have following syntax:
+
+Example 1: Let's say you have a function called `sum` like so:
+
+function sum(a, b) {
+ console.log('Sum is: ', a + b);
+}
+
+Now you should be able to execute: 
+sum.callAfter(5000, 8, 9);
+
+This should invoke the function `sum` after 5 seconds with parameters 8 and 9. 
+Output: 'Sum is: 17'.
+
+Example 2: For a function `difference` with the following implementation:
+
+function difference(a, b) {
+  console.log('Difference is: ', a-b);
+}
+
+You should be able to execute: 
+difference.callAfter(4000, 8, 6);
+
+This should invoke the function `difference` after 4 seconds with parameters 8 and 6. 
+Output: 'Difference is: 2'.</pre></div><div id="answer_8ptDydr" class="answer"><div class="player" style="height: 210px;"><pre class="prettyprint"><span class="kwd">function</span><span class="pln"> </span><span class="typ">Sum</span><span class="pun">(</span><span class="pln">a</span><span class="pun">,</span><span class="pln"> b</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp;console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">'Sum is: '</span><span class="pun">,</span><span class="pln"> a </span><span class="pun">+</span><span class="pln"> b</span><span class="pun">);</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br></span><span class="typ">Sum</span><span class="pun">.</span><span class="pln">prototype</span><span class="pun">.</span><span class="pln">callAfter </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">timer</span><span class="pun">,</span><span class="pln">param1</span><span class="pun">,</span><span class="pln">param2</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; setTimeout</span><span class="pun">(</span><span class="pln">func</span><span class="pun">,</span><span class="pln"> timer</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">function</span><span class="pln"> func</span><span class="pun">(){</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">Sum</span><span class="pun">(</span><span class="pln">param1</span><span class="pun">,</span><span class="pln">param2</span><span class="pun">);</span><span class="pln"> &nbsp; &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">};</span><span class="pln"><br></span><span class="kwd">var</span><span class="pln"> sum </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Sum</span><span class="pun">();</span><span class="pln"><br>console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">sum</span><span class="pun">.</span><span class="pln">callAfter</span><span class="pun">(</span><span class="lit">5000</span><span class="pun">,</span><span class="pln"> </span><span class="lit">8</span><span class="pun">,</span><span class="pln"> </span><span class="lit">9</span><span class="pun">));</span></pre></div><div class="toolbar ui-widget-header ui-corner-all"><div class="player_timer"><span class="current_time">0:00</span> / 43:20
+                        </div><div class="fd-slider " id="fd-slider-slider_8ptDydr" aria-disabled="false"><span class="fd-slider-inner"></span><span class="fd-slider-bar"></span><button type="button" class="fd-slider-handle" role="slider" aria-valuemin="0" aria-valuemax="2601000" aria-valuenow="0.00" aria-valuetext="0.00" style="left: 0px;">&nbsp;</button></div><input type="text" id="slider_8ptDydr" class="fd_slider fd_jump fd_range_0_2601000 fd_inc_100 fd_tween fd_slider_cb_move_zenSliderMoveHandler fd_slider_cb_update_zenSliderUpdateHandler" style="display: none" value="0"><button class="play ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" aria-disabled="false" title="play"><span class="ui-button-icon-primary ui-icon ui-icon-play"></span><span class="ui-button-text">play</span></button><span class="player_speed ui-buttonset"><label for="speed_1x_8ptDydr" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button" aria-disabled="false"><span class="ui-button-text">1x</span></label><input type="radio" id="speed_1x_8ptDydr" value="1" name="speed_8ptDydr" class="ui-helper-hidden-accessible"><label for="speed_2x_8ptDydr" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">2x</span></label><input type="radio" id="speed_2x_8ptDydr" value="2" name="speed_8ptDydr" class="ui-helper-hidden-accessible"><label for="speed_5x_8ptDydr" class="ui-state-active ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" aria-pressed="true" role="button" aria-disabled="false"><span class="ui-button-text">5x</span></label><input type="radio" id="speed_5x_8ptDydr" value="5" name="speed_8ptDydr" checked="checked" class="ui-helper-hidden-accessible"></span></div></div><div class="section_title"><h3 style="text-shadow: rgb(62, 40, 40) 0px 0px 2px;">Question 5</h3></div><div class="questiontext"><pre>Write an implementation of a function called `generateSelector` to generate a CSS selector path of a DOM element.
+
+Base structure:
+
+function generateSelector(DOMNode) {
+ //should return the CSS selector
+}
+
+Output:
+For the given sample HTML, the possible selector for each DOM element is mentioned against it in the comments
+
+&lt;body&gt;
+	&lt;div id="z"&gt;&lt;!-- Possible CSS Selector Path : #z --&gt;
+		&lt;span class="a"&gt;Empty span&lt;/span&gt;&lt;!-- Possible CSS Selector Path : span:nth-of-type(1), NOTE: .a would give two elements if we choose that. --&gt;
+		&lt;ul class="a b c"&gt;&lt;/ul&gt;&lt;!-- Possible CSS Selector Path : .a.b.c --&gt;
+		&lt;ul&gt;&lt;!-- Possible CSS Selector Path : ul:nth-of-type(2) --&gt;
+			&lt;li&gt;1&lt;/li&gt;&lt;!-- Possible CSS Selector Path : ul:nth-of-type(2) &gt; li:nth-of-type(1) --&gt;
+			&lt;li&gt;2&lt;/li&gt;&lt;!-- Possible CSS Selector Path : ul:nth-of-type(2) &gt; li:nth-of-type(2) --&gt;
+			&lt;li&gt;3&lt;/li&gt;&lt;!-- Possible CSS Selector Path : ul:nth-of-type(2) &gt; li:nth-of-type(3) --&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/body&gt;</pre></div><div id="answer_8pv9wz6" class="answer"><p class="skip">Candidate skipped question</p></div></div>

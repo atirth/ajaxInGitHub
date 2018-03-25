@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+</head>
+<body>
+
+  <nav class='navbar navbar-default'>
+    <div class='container'>
+      <div class="navbar-header">
+      </div>
+    </div>
+  </nav>
+  <ul class="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+
+
+  <div class="container">
+    <h1>check console</h1>
+  </div>
+  
+</body>
+
+<script>
+  document.getElementsByClassName("list")[0].addEventListener('click',function(event){
+      console.log(event.target);
+      console.log(indexInParent(event.target));
+  });
+  function indexInParent(node) {
+    debugger;
+    var children = node.parentNode.childNodes;
+    var num = 0;
+    for (var i=0; i<children.length; i++) {
+         if (children[i]==node) return num;
+         if (children[i].nodeType==1) num++;
+    }
+    return -1;
+}
+
+</script>
+</html>
