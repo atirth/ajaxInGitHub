@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+</head>
+<body>
+
+  <nav class='navbar navbar-default'>
+    <div class='container'>
+      <div class="navbar-header">
+      </div>
+    </div>
+  </nav>
+
+
+  <div class = "div" style="background-color: pink;width: 200px;display:inline-block;height: 200px;">div
+    <ul style="background-color: yellow;width: 150px;height: 150px;padding: 0;margin: 0" class="ul">ul
+    	<li class="li" style="background-color: red;width: 100px;height: 100px;list-style: none;">li</li>
+    </ul>
+  </div>
+  
+</body>
+<script>
+	console.log(document.getElementsByClassName("container")[0]);
+	document.getElementsByClassName("li")[0].addEventListener("click",function(event){console.log("li");},false);
+	document.getElementsByClassName("ul")[0].addEventListener("click",function(event){console.log("ul");},false);
+	document.getElementsByClassName("div")[0].addEventListener("click",function(event){console.log("div");},false);
+</script>
+</html>

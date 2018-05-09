@@ -1,9 +1,4 @@
-import React, { Component } from 'react';
-import SelectCityComponent from "./Widget/SelectCityComponent.js"
-
-class Widget extends Component{
-	state ={
-		[
+[
 	{
 		"cityName": "New Delhi",
 		"airportData": "Indira Gandhi International Airport",
@@ -145,14 +140,3 @@ class Widget extends Component{
 		"cityType": "IF"
 	}
 ]
-	}
-	render(){
-		return (
-			<div>
-			<h1>Search Widget</h1>
-			<SelectCityComponent airport={this.state.}/>
-			</div>
-			)
-	}
-}
-export default Widget
